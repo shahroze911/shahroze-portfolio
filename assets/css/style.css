@@ -3,7 +3,7 @@
 \*-----------------------------------*/
 
 /**
- * copyright 2022 @codewithsadee
+ 
  */
 
 /*-----------------------------------*\
@@ -166,6 +166,7 @@ html {
 
 body {
   background: var(--smoky-black);
+    
 }
 
 /*-----------------------------------*\
@@ -471,7 +472,7 @@ main {
 
 .social-item .social-link {
   color: var(--light-gray-70);
-  font-size: 18px;
+  font-size: 20px;
   
 }
 
@@ -1234,6 +1235,7 @@ data {
   margin-bottom: 10px;
 }
 
+
 .blog-meta :is(.blog-category, time) {
   color: var(--light-gray-70);
   font-size: var(--fs-6);
@@ -1485,6 +1487,7 @@ textarea.form-input::-webkit-resizer {
   .sidebar {
     max-height: 180px;
     margin-bottom: 30px;
+    
   }
 
   .sidebar.active {
@@ -1527,7 +1530,7 @@ textarea.form-input::-webkit-resizer {
   }
 
   .separator {
-    margin: 32px 0;
+    margin: 15px 0;
   }
 
   .contacts-list {
