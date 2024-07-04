@@ -3,7 +3,7 @@
 \*-----------------------------------*/
 
 /**
- 
+ * copyright 2022 @codewithsadee
  */
 
 /*-----------------------------------*\
@@ -166,7 +166,6 @@ html {
 
 body {
   background: var(--smoky-black);
-    
 }
 
 /*-----------------------------------*\
@@ -1066,7 +1065,7 @@ data {
 .project-list {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 30px;
+  gap: 10px;
   margin-bottom: 10px;
 }
 
@@ -1172,6 +1171,12 @@ data {
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
 }
+
+.contact-social .social-link ion-icon {
+  font-size: 32px; /* Adjust the font size as needed */
+}
+
+
 
 /*-----------------------------------*\
   #BLOG
