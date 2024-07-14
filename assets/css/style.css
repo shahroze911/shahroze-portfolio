@@ -191,7 +191,7 @@ article {
 
 .icon-box {
   position: relative;
-  background: var(--border-gradient-onyx);
+  
   width: 30px;
   height: 30px;
   border-radius: 8px;
@@ -200,7 +200,7 @@ article {
   align-items: center;
   font-size: 16px;
   color: var(--orange-yellow-crayola);
-  box-shadow: var(--shadow-1);
+  
   z-index: 1;
 }
 
@@ -428,7 +428,55 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
+}/* Center the button within the info-content */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
+
+/* Center the button within the info-content */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* Style for the resume button */
+.resume-btn {
+  display: flex;
+  align-items: center;
+  background: var(--border-gradient-onyx);
+  color: var(--orange-yellow-crayola);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.resume-btn i {
+  margin-right: 8px; /* Space between icon and text */
+}
+
+.resume-btn:hover {
+  background: var(--border-gradient-onyx);
+  transform: translateY(-2px); /* Lift button slightly on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resume-btn:active {
+  background: var(--border-gradient-onyx);
+  transform: translateY(0); /* Reset lift effect on click */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
 
 .contact-item {
   min-width: 100%;
@@ -459,6 +507,7 @@ main {
   
 }
 
+
 .social-list {
   display: flex;
   justify-content:center;
@@ -468,7 +517,15 @@ main {
   padding-left: 7px;
   
 }
-
+.social-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 20px 0;
+  
+}
 .social-item .social-link {
   color: var(--light-gray-70);
   font-size: 20px;
@@ -1456,7 +1513,7 @@ textarea.form-input::-webkit-resizer {
   article {
     width: 520px;
     margin-inline: auto;
-    padding: 15px;
+    padding: 11px;
   }
 
   .article-title {
@@ -1472,7 +1529,7 @@ textarea.form-input::-webkit-resizer {
   .icon-box {
     width: 50px;
     height: 50px;
-    border-radius: 12px;
+    border-radius: 50px;
     font-size: 20px;
   }
 
