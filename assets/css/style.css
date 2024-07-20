@@ -889,35 +889,97 @@ data {
 /**
  * #clients 
  */
+.skill {
+	margin: 0;
+	padding: 0;
+}
+
+.skills-title {
+	margin: 0;
+	padding: 10px 0;
+	text-align: center;
+}
+
+.carousel-container {
+	position: relative;
+	width: 100%;
+	overflow: hidden; /* Hide scrollbar */
+	padding: 0 0 20px 0; /* Add padding at the bottom for content spacing */
+	margin: 0;
+}
 
 .clients {
-	margin-bottom: 15px;
+	display: flex;
+	align-items: center;
+	height: 120px;
+	width: auto; /* Ensure this is twice the width of the container */
+	animation: scroll 25s linear infinite;
 }
 .clients-list {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr); /* Creates 4 equal columns */
-	gap: 15px;
+	display: flex;
+	gap: 0;
 	margin: 0;
-	padding: 25px;
+	padding: 0;
+	list-style: none;
+	width: 100%;
 }
 
 .clients-item {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	width: 100px;
+	height: 120px;
+	margin: 0;
+	padding: 0;
+	white-space: nowrap; /* Prevent content wrapping */
 }
 
-.clients-item img {
-	width: 100px; /* Set a fixed width for all logos */
-	height: 100px; /* Set a fixed height for all logos */
-	object-fit: contain; /* Ensures logos maintain aspect ratio */
-	filter: grayscale(1);
-	transition: var(--transition-1);
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100px;
+	height: 100px;
+	background: #1e1e1e;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s;
+	margin: 0;
 }
 
-.clients-item img:hover {
+.card:hover {
+	transform: scale(1.1);
+}
+
+.card img {
+	width: 80px;
+	height: 80px;
+	object-fit: contain;
+	transition: filter 0.3s;
+}
+
+.card img:hover {
 	filter: grayscale(0);
 }
+
+.logo-name {
+	margin-top: 10px;
+	font-size: 14px;
+	color: white;
+	text-align: center;
+}
+
+@keyframes scroll {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-200%);
+	}
+}
+
 /*-----------------------------------*\
   #RESUME
 \*-----------------------------------*/
@@ -998,7 +1060,7 @@ data {
  * skills 
  */
 
-.skills-title {
+/* .skills-title {
 	margin-bottom: 20px;
 }
 
@@ -1034,7 +1096,7 @@ data {
 	background: var(--text-gradient-yellow);
 	height: 100%;
 	border-radius: inherit;
-}
+} */
 
 /*-----------------------------------*\
   #PORTFOLIO
@@ -1308,6 +1370,47 @@ data {
 	font-weight: var(--fw-300);
 	line-height: 1.6;
 }
+
+.blog-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.button i {
+  margin-right: 5px;
+}
+
+.live-demo {
+  background-color: #007bff; /* Bootstrap primary color */
+}
+
+.github {
+  background-color: #333; /* GitHub dark gray color */
+}
+
+.live-demo:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.github:hover {
+  background-color: #1a1a1a;
+  transform: scale(1.05);
+}
+
 
 /*-----------------------------------*\
   #CONTACT
@@ -1707,7 +1810,7 @@ textarea.form-input::-webkit-resizer {
 	/* clients */
 
 	.clients-list {
-		gap: 50px;
+		/* gap: 50px; */
 		margin: 0 -30px;
 		padding: 45px;
 		scroll-padding-inline: 45px;
