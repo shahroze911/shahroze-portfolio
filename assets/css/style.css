@@ -955,8 +955,8 @@ data {
 }
 
 .card img {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
   transition: filter 0.3s;
 }
