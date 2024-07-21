@@ -890,95 +890,97 @@ data {
  * #clients 
  */
 .skill {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .skills-title {
-	margin: 0;
-	padding: 10px 0;
-	text-align: center;
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
 }
 
 .carousel-container {
-	position: relative;
-	width: 100%;
-	overflow: hidden; /* Hide scrollbar */
-	padding: 0 0 20px 0; /* Add padding at the bottom for content spacing */
-	margin: 0;
+  position: relative;
+  width: 100%;
+  overflow-x: scroll; /* Show horizontal scrollbar */
+  padding: 0 0 20px 0;
+  margin: 0;
 }
 
 .clients {
-	display: flex;
-	align-items: center;
-	height: 120px;
-	width: auto; /* Ensure this is twice the width of the container */
-	animation: scroll 25s linear infinite;
+  display: flex;
+  align-items: center;
+  height: 120px;
+  width: max-content;
+  animation: scroll 50s linear infinite;
 }
+
 .clients-list {
-	display: flex;
-	gap: 0;
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	width: 100%;
+  display: flex;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: auto;
 }
 
 .clients-item {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100px;
-	height: 120px;
-	margin: 0;
-	padding: 0;
-	white-space: nowrap; /* Prevent content wrapping */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 120px;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
 }
 
 .card {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 100px;
-	height: 100px;
-	background: #1e1e1e;
-	border-radius: 8px;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	transition: transform 0.3s;
-	margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  background: #1e1e1e;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  margin: 0;
 }
 
 .card:hover {
-	transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .card img {
-	width: 80px;
-	height: 80px;
-	object-fit: contain;
-	transition: filter 0.3s;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  transition: filter 0.3s;
 }
 
 .card img:hover {
-	filter: grayscale(0);
+  filter: grayscale(0);
 }
 
 .logo-name {
-	margin-top: 10px;
-	font-size: 14px;
-	color: white;
-	text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+  color: white;
+  text-align: center;
 }
 
 @keyframes scroll {
-	0% {
-		transform: translateX(0);
-	}
-	100% {
-		transform: translateX(-200%);
-	}
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-500%);
+  }
 }
+
 
 /*-----------------------------------*\
   #RESUME
@@ -1409,6 +1411,24 @@ data {
 .github:hover {
   background-color: #1a1a1a;
   transform: scale(1.05);
+}
+
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.keyword-card {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #333;
+  color: white;
+  border-radius: 5px;
+  font-size: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    pointer-events: none; /* Disable pointer events */
 }
 
 

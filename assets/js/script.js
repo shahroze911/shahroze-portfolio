@@ -157,3 +157,23 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+	const container = document.querySelector(".clients-list");
+	const clients = document.querySelector(".clients");
+	const items = Array.from(container.children);
+
+	// Clone items to create an infinite loop effect
+	items.forEach((item) => {
+		container.appendChild(item.cloneNode(true));
+	});
+
+	// Pause animation on hover
+	clients.addEventListener("mouseenter", () => {
+		clients.style.animationPlayState = "paused";
+	});
+
+	clients.addEventListener("mouseleave", () => {
+		clients.style.animationPlayState = "running";
+	});
+});
