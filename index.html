@@ -713,8 +713,8 @@ Let's connect and discuss opportunities! Whether it's collaborations, new projec
     </div>
     <h3 class="h3">My Skills</h3>
   </div>
-  <div class="carousel-container">
-    <ul class="clients clients-list">
+  <div class="carousel-container ">
+    <ul class="clients clients-list has-scrollbar">
       <li class="clients-item">
         <div class="card">
           <a>
@@ -1369,24 +1369,33 @@ Let's connect and discuss opportunities! Whether it's collaborations, new projec
   </header>
 
   <section class="contact-form">
-    <h3 class="h3 form-title">Contact Form</h3>
-
-    <form id="contactForm" class="form">
-      <div class="input-wrapper">
-        <input type="text" name="fullname" class="form-input" placeholder="Full name" required />
-        <input type="email" name="email" class="form-input" placeholder="Email address" required />
-      </div>
-
-      <textarea name="message" class="form-input" placeholder="Your Message" required></textarea>
-
-      
-
-      <button class="form-btn" type="submit">
-        <ion-icon name="paper-plane"></ion-icon>
-        <span>Send Message</span>
-      </button>
- 
-      <div class="social-footer">
+    <h3 class="h3 form-title">Contact Form</h3>  
+    <form id="contactForm" class="contact-form">
+  <div class="input-wrapper">
+    <input type="text" name="fullname" class="form-input" placeholder="Full name" required />
+    <input type="email" name="email" class="form-input" placeholder="Email address" required />
+  </div>
+  
+  <div class="input-wrapper">
+    <select name="services" class="form-input" required>
+      <option value="" disabled selected>Select a service</option>
+      <option value="website development">Website Development</option>
+      <option value="app development">App Development</option>
+      <option value="software documentation">Software Documentation</option>
+      <option value="technical writing">Technical Writing</option>
+    </select>
+  </div>
+  <textarea name="message" class="form-input" placeholder="Your Message" required></textarea>
+  <button class="form-btn" type="submit">
+    <ion-icon name="paper-plane"></ion-icon>
+    <span>Send Message</span>
+  </button>
+   <div id="centeredNotification" class="centered-notification">
+    <p id="centeredNotificationMessage"></p>
+    <button id="closeCenteredNotification" class="close">&times;</button>
+  </div>
+</form>
+     <div class="social-footer">
     <ul class="social-list">
       <li class="social-item">
         <div class="icon-box">
@@ -1430,8 +1439,6 @@ Let's connect and discuss opportunities! Whether it's collaborations, new projec
       </li>      
     </ul>
   </div>
-        
-    </form>
   </section>
 </article>
 
@@ -1452,30 +1459,57 @@ Let's connect and discuss opportunities! Whether it's collaborations, new projec
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            emailjs.init("062QrqU8Enk1it5Q6");
-        })();
-    </script>
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
+   <script type="text/javascript">
+  (function() {
+    emailjs.init("062QrqU8Enk1it5Q6");
+  })();
+</script>
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault();
 
-            const formData = {
-                fullname: this.fullname.value,
-                email: this.email.value,
-                message: this.message.value,
-            };
+  const formData = {
+    fullname: this.fullname.value,
+    email: this.email.value,
+    services: this.services.value,
+    message: this.message.value,
+  };
 
-            emailjs.send("service_mkyverp", "template_9wkoino", formData)
-                .then(function(response) {
-                    alert('Email sent successfully!');
-                    document.getElementById('contactForm').reset();
-                }, function(error) {
-                    alert('Failed to send email. Please try again.');
-                });
-        });       
-    </script>
+  emailjs.send("service_mkyverp", "template_9wkoino", formData)
+    .then(function(response) {
+      showCenteredNotification('Email sent successfully!', 'success');
+      // Reset the form after a successful submission
+      document.getElementById('contactForm').reset();
+    }, function(error) {
+      showCenteredNotification('Failed to send email. Please try again.', 'error');
+    });
+});
+
+// Function to show centered notification
+function showCenteredNotification(message, type) {
+  const centeredNotification = document.getElementById('centeredNotification');
+  const centeredNotificationMessage = document.getElementById('centeredNotificationMessage');
+  const closeCenteredNotification = document.getElementById('closeCenteredNotification');
+
+  // Set the message and style based on type
+  centeredNotificationMessage.textContent = message;
+  centeredNotification.className = `centered-notification ${type}`;
+
+  // Display the centered notification
+  centeredNotification.style.display = 'block';
+
+  // Close the centered notification when the user clicks on <button> (x)
+  closeCenteredNotification.onclick = function() {
+    centeredNotification.style.display = 'none';
+  }
+
+  // Automatically hide the centered notification after 5 seconds
+  setTimeout(function() {
+    centeredNotification.style.display = 'none';
+  }, 5000);
+}
+
+</script>
    
 </body>
 
