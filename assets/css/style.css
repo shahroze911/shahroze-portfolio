@@ -508,7 +508,7 @@ main {
     width: 100%;
     box-sizing: border-box;
     position: relative;
-    margin-top: 100px;
+    
     
     /* border-top: 1px solid var(--orange-yellow-crayola); */
 }
@@ -1608,7 +1608,7 @@ textarea.form-input::-webkit-resizer {
   box-shadow: var(--shadow-3);
   z-index: 1;
   transition: var(--transition-1);
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 
 .form-btn::before {
