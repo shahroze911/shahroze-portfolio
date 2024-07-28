@@ -501,30 +501,59 @@ main {
 	font-style: normal;
 }
 
+/* Existing styles */
 .social-list {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 15px;
-	padding-bottom: 4px;
-	padding-left: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 4px;
+    padding-left: 7px;
 }
+
 .social-footer {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	text-align: center;
-	padding: 20px 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 20px 0;
 }
+
 .social-item .social-link {
-	color: var(--light-gray-70);
-	font-size: 20px;
+    color: var(--light-gray-70);
+    font-size: 20px;
 }
 
 .social-item .social-link:hover {
-	color: var(--light-gray);
+    color: var(--light-gray);
 }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .social-list {
+        flex-direction: column;
+        padding-left: 0;
+    }
+
+    .social-item {
+        margin: 5px 0;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .social-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-left: 7px;
+    }
+
+    .social-item {
+        margin: 10px;
+    }
+}
+
 
 /*-----------------------------------*\
   #NAVBAR
@@ -1759,11 +1788,12 @@ textarea.form-input::-webkit-resizer {
 	}
 
 	.avatar-box {
-		border-radius: 30px;
+		border-radius: 50%;
 	}
 
 	.avatar-box img {
 		width: 120px;
+		
 	}
 
 	.info-content .name {
