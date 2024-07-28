@@ -350,7 +350,9 @@ main {
 
 .avatar-box {
 	background: var(--bg-gradient-onyx);
-	border-radius: 10px;
+    border-radius: 50%; /* Ensures the image is always circular */
+ display: inline-block;
+    overflow: hidden; /* Ensures the rounded corners are respected */
 }
 
 .info-content .name {
@@ -500,8 +502,6 @@ main {
 .contact-info address {
 	font-style: normal;
 }
-
-/* Existing styles */
 .social-list {
     display: flex;
     justify-content: center;
@@ -512,12 +512,11 @@ main {
 }
 
 .social-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
     text-align: center;
     padding: 20px 0;
+    width: 100%; /* Ensure it takes full width */
+    box-sizing: border-box; /* Include padding and border in width */
+    background-color: #f1f1f1; /* Optional: add a background color */
 }
 
 .social-item .social-link {
@@ -529,10 +528,9 @@ main {
     color: var(--light-gray);
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
     .social-list {
-        flex-direction: column;
+        flex-direction: row;
         padding-left: 0;
     }
 
@@ -1507,8 +1505,17 @@ data {
 	border: none;
 	filter: grayscale(1) invert(1);
 }
+.contact {
+    display: flex;
+    flex-direction: column;
+	    height: 100%;
+    
+}
 .contact-form {
   margin-bottom: 10px;
+  flex: 1;
+    
+  
 }
 
 .form-title {
@@ -1788,14 +1795,19 @@ textarea.form-input::-webkit-resizer {
 	}
 
 	.avatar-box {
-		border-radius: 50%;
-	}
+    display: inline-block;
+    overflow: hidden; /* Ensures the rounded corners are respected */
+    border-radius: 50%; /* Ensures the image is always circular */
+}
 
 	.avatar-box img {
 		width: 120px;
+		    transition: transform 0.3s ease-in-out;
 		
 	}
-
+.avatar-img:hover {
+    transform: scale(1.1); /* Scales the image to 110% on hover */
+}
 	.info-content .name {
 		margin-bottom: 15px;
 	}
@@ -2335,7 +2347,10 @@ textarea.form-input::-webkit-resizer {
 
 	.avatar-box img {
 		width: 150px;
+		 border-radius: 50px;
+    transition: transform 0.3s ease-in-out;
 	}
+	
 
 	.info-content .name {
 		white-space: nowrap;
@@ -2375,9 +2390,7 @@ textarea.form-input::-webkit-resizer {
 		opacity: 0;
 	}
 
-	.social-list {
-		justify-content: center;
-	}
+	
 
 	/**
 	 * RESUME
