@@ -503,20 +503,24 @@ main {
 	font-style: normal;
 }
 .social-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    padding-bottom: 4px;
-    padding-left: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 0;
+  
+  list-style: none;
 }
 
 .social-footer {
+    position: relative; /* Changed from absolute to relative */
     text-align: center;
     padding: 20px 0;
+	  margin-top: auto; /* Pushes the footer to the bottom */
+
     width: 100%; /* Ensure it takes full width */
     box-sizing: border-box; /* Include padding and border in width */
-    background-color: #f1f1f1; /* Optional: add a background color */
+	
 }
 
 .social-item .social-link {
@@ -528,10 +532,11 @@ main {
     color: var(--light-gray);
 }
 
+/* Responsive styles */
 @media (max-width: 768px) {
     .social-list {
         flex-direction: row;
-        padding-left: 0;
+        
     }
 
     .social-item {
@@ -1505,15 +1510,9 @@ data {
 	border: none;
 	filter: grayscale(1) invert(1);
 }
-.contact {
-    display: flex;
-    flex-direction: column;
-	    height: 100%;
-    
-}
+
 .contact-form {
   margin-bottom: 10px;
-  flex: 1;
     
   
 }
