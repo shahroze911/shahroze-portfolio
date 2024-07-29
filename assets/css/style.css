@@ -523,25 +523,18 @@ main {
     list-style: none;
 }
 
-.icon-box {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.social-footer .icon-box {
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
 
-.icon-box img {
-    width: 35px; /* Fixed size for consistency */
-    height: 35px;
+.social-footer .icon-box img {
     border-radius: 50%;
     border: 2px solid transparent;
-    transition: border-color 0.3s ease; /* Smooth transition for border color */
+    transition: border-color 0.5s ease-in-out; /* Smooth transition for border color */
 }
 
-.icon-box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.icon-box:hover img {
-    border-color: var(--orange-yellow-crayola);
+.social-footer .icon-box:hover {
+    transform: translateY(-10px);    
 }
 
 .contact-link {

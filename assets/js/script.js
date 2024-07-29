@@ -177,3 +177,35 @@ document.addEventListener("DOMContentLoaded", () => {
 		clients.style.animationPlayState = "running";
 	});
 });
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    var quill = new Quill('#editor', {
+      theme: 'snow',
+      modules: {
+        toolbar: [
+          // [{ 'font': [] }],
+          [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+          ['bold', 'italic', 'underline', 'strike'],
+          [{ 'color': [] }, { 'background': [] }],
+          [{ 'script': 'sub' }, { 'script': 'super' }],
+          // ['blockquote', 'code-block'],
+          [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+          // [{ 'indent': '-1' }, { 'indent': '+1' }],
+          // [{ 'direction': 'rtl' }],
+          // [{ 'align': [] }],
+          // ['link', 'image', 'video'],
+          ['clean']
+        ]
+      }
+    });
+
+    // If you need to submit the content with a form, you can use a hidden input
+    var form = document.querySelector('form');
+    form.onsubmit = function() {
+      // Populate hidden form on submit
+      var content = document.querySelector('input[name=message]');
+      content.value = quill.root.innerHTML;
+    };
+  });
+
+  
