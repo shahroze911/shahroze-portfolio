@@ -725,7 +725,7 @@ main {
 
 .testimonials {
     position: relative;
-    width: 100%;
+    
     margin-bottom: 12px;
     overflow-x: scroll; /* Show horizontal scrollbar */
     padding: 0; /* Remove bottom padding */
