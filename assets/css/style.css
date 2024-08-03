@@ -1960,28 +1960,38 @@ textarea.form-input::-webkit-resizer {
 	}
 
 	.testimonials-list1 {
-		margin: 0 auto; /* Center the container horizontally */
-		padding: 0;
-		display: flex;
-		flex-wrap: nowrap;
-		overflow-x: auto;
-		overflow-y: hidden;
-		scrollbar-width: none;
-		-ms-overflow-style: none;
-		justify-content: center; /* Center the items horizontally */
-		align-items: center; /* Center the items vertically */
-		width: 100%;
-	}
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For IE and Edge */
+    justify-content: center;
+    align-items: center;
+}
 
 	.content-card {
 		padding: 30px;
 		padding-top: 25px;
 	}
 	.content-card1 {
-		padding: 30px;
-		padding-top: 25px;
-	}
-
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.content-card1:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.8);
+}
 	.testimonials-avatar-box {
 		transform: translate(30px, -30px);
 		border-radius: 20px;
