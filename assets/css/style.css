@@ -782,7 +782,8 @@ main {
 }
 
 .testimonials-item {
-	min-width: 100%;
+	
+	min-width: calc(50% - 15px);
 	scroll-snap-align: center;
 }
 .testimonials-avatar-box1 {
