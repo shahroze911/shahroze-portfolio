@@ -724,26 +724,47 @@ main {
  */
 
 .testimonials {
-	margin-bottom: 30px;
+    position: relative;
+    width: 100%;
+    margin-bottom: 12px;
+    overflow-x: scroll; /* Show horizontal scrollbar */
+    padding: 0; /* Remove bottom padding */
+    scrollbar-width: thin; /* Firefox scrollbar width */
+    scrollbar-color: var(--orange-yellow-crayola) var(--onyx); /* Firefox scrollbar handle and track color */
 }
+
 
 .testimonials-title {
 	margin-bottom: 20px;
 }
+.testimonials-list::-webkit-scrollbar {
+    height: 5px; /* for horizontal scrollbar */
+}
+
+.testimonials-list::-webkit-scrollbar-track {
+    background: var(--onyx);
+    border-radius: 5px;
+    margin: 0 10px; /* Add margin to the track from both sides */
+}
+
+.testimonials-list::-webkit-scrollbar-thumb {
+    background: var(--orange-yellow-crayola);
+    border-radius: 5px;
+}
+
+.testimonials-list::-webkit-scrollbar-button {
+    width: 20px;
+}
 
 .testimonials-list {
-	display: flex;
-	justify-content: flex-start;
-	align-items: flex-start;
-	gap: 15px;
-	list-style: none;
-	margin: 0 -15px;
-	padding: 25px 15px;
-	padding-bottom: 35px;
-	overflow-x: auto;
-	scroll-behavior: smooth;
-	overscroll-behavior-inline: contain;
-	scroll-snap-type: inline mandatory;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 30px;
+    list-style: none;
+    padding: 30px 30px 20px 30px; /* Adjust bottom padding to reduce space */
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
 }
 .testimonials-list1 {
 	display: flex;
