@@ -299,7 +299,6 @@ article.active {
 	position: relative;
 	background: var(--border-gradient-onyx);
 	padding: 15px;
-	
 	padding-top: 45px;
 	border-radius: 14px;
 	box-shadow: var(--shadow-2);
@@ -724,14 +723,12 @@ main {
  * #testimonials 
  */
 
-.testimonials {
+ .testimonials {
     position: relative;
     margin-bottom: 12px;
     padding: 0;
     overflow: hidden;
 }
-
-/* Container for testimonials list to center content and add side margins */
 .testimonials-container {
     display: flex;
     align-items: center;
@@ -740,22 +737,12 @@ main {
     padding: 0 10px; /* Adjust this value for side margins */
     width: 100%; /* Ensure the container takes full width */
 }
-
-.testimonials-list {
-    display: flex;
-    gap: 30px;
-    list-style: none;
-    padding: 30px 0; /* Add padding top and bottom only */
-    scroll-snap-type: x mandatory;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+.testimonials-title {
+    margin-bottom: 20px;
 }
-
-
-
-
+.testimonials-item-title {
+	margin-bottom: 7px;
+}
 .carousel-arrow {
     position: absolute;
     top: 50%;
@@ -774,71 +761,60 @@ main {
     z-index: 10; /* Ensure arrows are on top */
     transition: background 0.3s ease, box-shadow 0.3s ease;
 }
-
 .carousel-arrow:hover {
     background: rgba(0, 0, 0, 0.9);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
 }
-
 .carousel-arrow:active {
     background: rgba(0, 0, 0, 0.8);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
-
 .left-arrow {
-    left: 5px;
+    left: 10px;
 }
-
 .right-arrow {
-    right: 5px;
+    right: 10px;
+}
+.testimonials-list {
+    display: flex;
+    gap: 30px; /* Adjust the gap between items */
+    list-style: none;
+    padding: 30px 0 20px 0; /* Adjust padding for spacing */
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    overscroll-behavior-inline: contain;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    width: 100%;
 }
 .testimonials-list::-webkit-scrollbar {
-    display: none;  /* Chrome, Safari, and Opera */
+    display: none; /* Hide scrollbar for Webkit browsers */
 }
-
 .testimonials-item {
-    min-width: 300px;
+    flex: 0 0 50%; /* Each item takes 50% of the container width */
     scroll-snap-align: start;
-    position: relative;
-    
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    padding: 0px; /* Internal padding */
+    box-sizing: border-box; /* Include padding and border in width */
+	min-width: 100%;
 }
-
 .testimonials-avatar-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(15px, -25px);
-    box-shadow: var(--shadow-2);
-    border-radius: 14px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translate(15px, -25px);
+	border-radius: 14px;
 }
-
-.testimonials-avatar-box img {
-    width: 80px;
-    border-radius: 50%; /* Make avatar circular */
-}
-
-.testimonials-item-title {
-    margin-bottom: 7px;
-    margin-left: 95px; /* Adjust margin for better positioning */
-    font-weight: bold; /* Make title stand out */
-}
-
 .testimonials-text {
-    color: var(--light-gray);
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 1.6;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+	color: var(--light-gray);
+	font-size: var(--fs-6);
+	font-weight: var(--fw-300);
+	line-height: 1.6;
+	display: -webkit-box;
+	line-clamp: 4;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 }
-
-
-
 .testimonials-list1 {
 	display: flex;
 	justify-content: flex-start;
@@ -866,22 +842,42 @@ main {
 	font-weight: bold; /* Adjust as needed */
 }
 
+
+
 #tech-stack {
 	color: var(--light-gray);
 	text-align: justify;
 }
 
 #tech-stack1 {
-	list-style: decimal inside;
-	padding-left: 20px;
-	color: var(--light-gray);
-	text-align: justify;
+    list-style-type: disc; /* Use disc for bullets */
+    padding-left: 20px; /* Adjust padding for indentation */
+    color: var(--light-gray); /* Text color */
+    text-align: justify; /* Justify text */
 }
 
 /* Additional styling for list items */
 #tech-stack1 li {
-	margin-bottom: 5px;
-	font-size: 14px;
+    margin-bottom: 5px; /* Space between list items */
+    font-size: 14px; /* Font size for list items */
+}
+.custom-bullets {
+	list-style:none; /* Remove default bullets */
+	padding-left: 0; /* Remove default padding */
+}
+
+.custom-bullets li {
+	position: relative;
+	padding-left: 30px; /* Add padding for custom bullets */
+}
+
+.custom-bullets li::before {
+	content: '•'; /* Custom bullet character */
+	position: absolute;
+	left: 0;
+	color: var(--light-gray); /* Bullet color */
+	font-size: 16px; /* Bullet size */
+	line-height: 1; /* Align bullet with text */
 }
 
 ul.skills-list {
@@ -1064,7 +1060,7 @@ data {
 .carousel-container {
 	position: relative;
 	width: 100%;
-	overflow-x: scroll; /* Show horizontal scrollbar */
+	overflow-x: hidden; /* Show horizontal scrollbar */
 	padding: 0 0 20px 0;
 	scrollbar-width: thin; /* Firefox scrollbar width */
 	scrollbar-color: var(--orange-yellow-crayola) var(--onyx); /* Firefox scrollbar handle and track color */
@@ -2015,56 +2011,67 @@ textarea.form-input::-webkit-resizer {
 	/* testimonials */
 
 	.testimonials-title {
-    margin-bottom: 25px;
-}
+		margin-bottom: 25px;
+	}
 
-.testimonials-list {
-    gap: 30px;
-    margin: 0 -30px;
-    padding: 30px;
-    padding-bottom: 35px;
-    width: 100%;
-}
-
-.content-card {
-    padding: 30px;
-    padding-top: 25px;
-    width: 100%; /* Full width on smaller screens */
-	min-height: max-content;
-	height: 90%;
-}
-
-.testimonials-avatar-box {
-    transform: translate(30px, -30px);
-    border-radius: 20px;
-}
-
-.testimonials-avatar-box img {
-    width: 90px;
-}
-
-.testimonials-item-title {
-        margin-bottom: 10px;
-    margin-left: 95px;
-}
-
-.testimonials-text {
-    line-clamp: 2;
-    -webkit-line-clamp: 2;
-}
+	.testimonials-list {
+		gap: 30px;
+		margin: 0 -30px;
+		padding: 30px;
+		padding-bottom: 35px;
+		overflow: hidden;
+	}
 
 	.testimonials-list1 {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		display: flex;
-		flex-wrap: nowrap;
-		overflow-x: auto;
-		overflow-y: hidden;
-		scrollbar-width: none; /* For Firefox */
-		-ms-overflow-style: none; /* For IE and Edge */
-		justify-content: center;
-		align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For IE and Edge */
+    justify-content: center;
+    align-items: center;
+}
+
+	.content-card {
+		padding: 30px;
+		padding-top: 25px;
+	}
+	.content-card1 {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.content-card1:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+	.testimonials-avatar-box {
+		transform: translate(30px, -30px);
+		border-radius: 20px;
+	}
+
+	.testimonials-avatar-box img {
+		width: 80px;
+	}
+
+	.testimonials-item-title {
+		margin-bottom: 10px;
+		margin-left: 95px;
+	}
+
+	.testimonials-text {
+		line-clamp: 2;
+		-webkit-line-clamp: 2;
 	}
 	.testimonials-avatar-box1 {
 		border-radius: 14px;
@@ -2077,21 +2084,6 @@ textarea.form-input::-webkit-resizer {
 		width: 60px; /* Fixed width for avatar */
 		height: 60px; /* Fixed height for avatar */
 		box-sizing: border-box;
-	}
-	.content-card1 {
-		background-color: #fff;
-		border-radius: 10px;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-		padding: 20px;
-		display: flex;
-		align-items: center;
-		gap: 15px;
-		position: relative;
-		transition: transform 0.3s ease, background-color 0.3s ease;
-	}
-	.content-card1:hover {
-		transform: scale(1.05);
-		background-color: rgba(255, 255, 255, 0.8);
 	}
 	.counter {
 		display: flex;
@@ -2115,45 +2107,6 @@ textarea.form-input::-webkit-resizer {
 
 	/* Responsive adjustments */
 	@media (max-width: 600px) {
-		.testimonials-title {
-    margin-bottom: 25px;
-}
-
-.testimonials-list {
-    gap: 30px;
-    margin: 0 -30px;
-    padding: 30px;
-    padding-bottom: 35px;
-    width: 100%;
-}
-
-.content-card {
-    padding: 30px;
-    padding-top: 25px;
-    width: 100%; /* Full width on smaller screens */
-	min-height: max-content;
-	height: 90%;
-}
-
-.testimonials-avatar-box {
-    transform: translate(30px, -30px);
-    border-radius: 20px;
-}
-
-.testimonials-avatar-box img {
-    width: 90px;
-}
-
-.testimonials-item-title {
-	font-size: larger;
-        margin-bottom: 10px;
-    margin-left: 95px;
-}
-
-.testimonials-text {
-    line-clamp: 2;
-    -webkit-line-clamp: 2;
-}
 		.testimonials-list1 {
 			padding-left: 10px;
 			padding-right: 10px;
